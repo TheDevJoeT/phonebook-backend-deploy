@@ -24,13 +24,13 @@ const personSchema = new mongoose.Schema({
     validate: {
       validator: function (value) {
         // Must match: 2-3 digits, dash, then digits
-        return /^\d{2,3}-\d+$/.test(value);
+        return /^\d{2,3}-\d+$/.test(value)
       },
       message: (props) =>
         `${props.value} is not a valid phone number format`,
     },
   },
-});
+})
 
 personSchema.set('toJSON', {
   transform: (document, returnedObject) => {
